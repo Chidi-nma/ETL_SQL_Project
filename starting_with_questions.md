@@ -85,10 +85,12 @@ CREATE TEMP TABLE total_products_ordered AS
 	ORDER BY v2_productcategory DESC;
 
 -- to view each category
-SELECT *
-FROM total_products_ordered
-WHERE v2_productcategory LIKE '%Home%' 
 -- Almost every order is from the home category 
+-- consider doing a percentage to show proof
+SELECT full_visitorid, product_sku, v2_productcategory, total_ordered, city, country
+FROM total_products_ordered
+-- WHERE v2_productcategory LIKE '%Home%' 
+
 
 ```
 
