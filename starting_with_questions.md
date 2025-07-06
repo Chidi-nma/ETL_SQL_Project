@@ -5,7 +5,12 @@ Answer the following questions and provide the SQL queries used to find the answ
 
 
 SQL Queries:
-
+SELECT country, city, SUM(total_transaction_revenue) AS revenue  --, transaction_revenue
+FROM all_sessions
+WHERE city != 'not available in demo dataset' 
+	AND total_transaction_revenue IS NOT NULL
+GROUP BY country, city
+ORDER BY revenue DESC
 
 
 Answer:
