@@ -41,7 +41,7 @@ ORDER BY average_number_of_products DESC
 
 
 ### :heavy_check_mark: Answer
-![Question 2 answer.](./images/question2.jpeg)
+![Question 2 answer.](./images/question22.jpeg)
 
 
 
