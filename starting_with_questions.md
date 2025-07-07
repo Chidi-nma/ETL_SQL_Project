@@ -106,6 +106,21 @@ Answer:
 
 
 SQL Queries:
+```SQL
+SELECT v2_productname, country, SUM(total_ordered) AS total_orders
+FROM (
+	SELECT als.product_sku, v2_productname, city, country, total_ordered--, SUM(total_ordered)
+	FROM all_sessions als
+	JOIN sales_by_sku sbs
+	ON als.product_sku = sbs.product_sku
+	WHERE sbs.total_ordered <> 0 
+		AND city <> 'not available in demo dataset' 
+		AND city <> '(not set)'
+		AND country <>'(not set)'
+	)
+GROUP BY v2_productname, country
+ORDER BY total_orders DESC
+```
 
 
 
