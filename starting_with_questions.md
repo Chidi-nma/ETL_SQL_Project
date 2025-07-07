@@ -109,7 +109,7 @@ SQL Queries:
 ```SQL
 SELECT v2_productname, country, SUM(total_ordered) AS total_orders
 FROM (
-	SELECT als.product_sku, v2_productname, city, country, total_ordered--, SUM(total_ordered)
+	SELECT als.product_sku, v2_productname, city, country, total_ordered
 	FROM all_sessions als
 	JOIN sales_by_sku sbs
 	ON als.product_sku = sbs.product_sku
@@ -126,7 +126,25 @@ ORDER BY total_orders DESC
 
 Answer:
 
+```sql
+SELECT 
+  country,
+  city,
+  SUM(total_transaction_revenue) AS total_revenue,
+  ROUND(
+    100.0 * SUM(total_transaction_revenue) / SUM(SUM(total_transaction_revenue)) OVER (), 
+    2
+  ) AS revenue_percent
+FROM 
+  all_sessions
+WHERE city != 'not available in demo dataset' 
+	AND total_transaction_revenue IS NOT NULL
+GROUP BY 
+  country, city
+ORDER BY 
+  total_revenue DESC;
 
+```
 
 
 
