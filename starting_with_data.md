@@ -19,10 +19,11 @@ WHERE sbs.total_ordered <> 0
 	AND time_on_site IS NOT NULL
 GROUP BY v2_productname
 ORDER BY total_orders DESC
-LIMIT 10
+LIMIT 10;
 ```
 
-Answer: 
+### :heavy_check_mark: Answer
+![Question 1 answer.](./images/2question1.jpeg)
 
 
 
@@ -31,15 +32,29 @@ Answer:
 
 SQL Queries:
 ```sql
-SELECT distinct full_visitorid
-FROM analytics
+CREATE TEMP TABLE new_table AS
+	SELECT distinct als.full_visitorid AS als_fullvisitorid, a.full_visitorid AS af_fullvisitorid
+	FROM all_sessions als
+	FULL OUTER JOIN analytics a
+	ON a.visitid = als.visitid;
+
+SELECT COUNT(*)
+FROM
+	(SELECT als_fullvisitorid
+	FROM new_table
+	WHERE als_fullvisitorid IS NOT NULL
+	UNION
+	SELECT af_fullvisitorid
+	FROM new_table
+	WHERE af_fullvisitorid IS NOT NULL) AS all_unique_visitors;
 ```
 
-Answer:
+### :heavy_check_mark: Answer
+![Question 2 answer.](./images/2question2.jpeg)
 
 
 
-Question 3: 
+## Question 3: 
 > Find each unique product viewed by each visitor
 
 SQL Queries:
@@ -47,23 +62,42 @@ SQL Queries:
 ```sql
 SELECT distinct full_visitorid, v2_productname  
 FROM all_sessions
-WHERE v2_productname IS NOT NULL
+WHERE v2_productname IS NOT NULL;
 ```
 
-Answer:
+### :heavy_check_mark: Answer
+![Question 3 answer.](./images/2question3.jpeg)
 
 
 
-Question 4: 
-
-SQL Queries:
-
-Answer:
-
-
-
-Question 5: 
+## Question 4 
+> Which products had the highest number of views?
 
 SQL Queries:
+```sql
+SELECT v2_productname, COUNT(*) AS views
+FROM all_sessions
+WHERE v2_productname IS NOT NULL
+GROUP BY v2_productname
+ORDER BY views DESC
+LIMIT 10;
+```
 
-Answer:
+### :heavy_check_mark: Answer
+![Question 4 answer.](./images/2question4.jpeg)
+
+
+
+## Question 5
+> How many sessions did each visitor have?
+
+SQL Queries:
+```SQL
+SELECT full_visitorid, COUNT(DISTINCT visitid) AS session_count
+FROM all_sessions
+GROUP BY full_visitorid
+ORDER BY session_count DESC
+```
+
+### :heavy_check_mark: Answer
+![Question 5 answer.](./images/2question5.jpeg)
