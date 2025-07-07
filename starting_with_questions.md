@@ -20,7 +20,8 @@ ORDER BY revenue DESC
 
 
 
-**Question 2: What is the average number of products ordered from visitors in each city and country?**
+## Question 2
+> What is the average number of products ordered from visitors in each city and country?**
 
 
 SQL Queries:
@@ -40,7 +41,7 @@ ORDER BY average_number_of_products DESC
 
 
 ### :heavy_check_mark: Answer
-
+![Question 2 answer.](./images/question2.jpeg)
 
 
 
@@ -75,7 +76,7 @@ WHERE v2_productcategory LIKE '%Home%'
 
 
 ### :heavy_check_mark: Answer
-
+![Question 3 answer.](./images/question3.jpeg)
 
 
 
@@ -103,6 +104,18 @@ ORDER BY total_orders DESC
 
 
 ### :heavy_check_mark: Answer
+![Question 4 answer.](./images/question4.jpeg)
+
+
+
+
+
+
+
+
+**Question 5: Can we summarize the impact of revenue generated from each city/country?**
+
+SQL Queries:
 
 ```sql
 SELECT 
@@ -125,14 +138,8 @@ ORDER BY
 ```
 
 
-
-**Question 5: Can we summarize the impact of revenue generated from each city/country?**
-
-SQL Queries:
-
-
-
 ### :heavy_check_mark: Answer
+![Question 5 answer.](./images/question5.jpeg)
 
 
 
