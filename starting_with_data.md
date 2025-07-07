@@ -1,4 +1,4 @@
-Question 1: 
+## Question 1: 
 > What products did visitors look at btw November 2016 and December 2016 and were ordered, and how many times was the product viewed in total, as well as the amount of time spent looking at each product?
   
 
@@ -26,17 +26,29 @@ Answer:
 
 
 
-Question 2: 
+## Question 2: 
+>  find the total number of unique visitors (`fullVisitorID`)
 
 SQL Queries:
+```sql
+SELECT distinct full_visitorid
+FROM analytics
+```
 
 Answer:
 
 
 
 Question 3: 
+> Find each unique product viewed by each visitor
 
 SQL Queries:
+
+```sql
+SELECT distinct full_visitorid, v2_productname  
+FROM all_sessions
+WHERE v2_productname IS NOT NULL
+```
 
 Answer:
 
