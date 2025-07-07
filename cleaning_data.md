@@ -38,7 +38,7 @@ WHERE city <> '(not set)'
 
 > 4. Remove rows from the sessions table where the total transaction revenue and transactions are null. This allows us to focus on visitors who generated revenue after visiting the site
 
-```
+```SQL
 SELECT * 
 FROM all_sessions
 WHERE total_transaction_revenue IS NOT NULL 
