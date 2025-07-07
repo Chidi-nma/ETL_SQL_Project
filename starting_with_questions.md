@@ -1,7 +1,7 @@
-Answer the following questions and provide the SQL queries used to find the answer.
-
     
-**Question 1: Which cities and countries have the highest level of transaction revenues on the site?**
+## Question 1
+> Which cities and countries have the highest level of transaction revenues on the site?
+
 
 ```SQL
 SQL Queries:
@@ -14,7 +14,8 @@ ORDER BY revenue DESC
 ```
 
 
-Answer:
+### :heavy_check_mark: Answer
+
 ![Question 1 answer.](./images/question1.jpeg)
 
 
@@ -38,13 +39,14 @@ ORDER BY average_number_of_products DESC
 ```
 
 
-Answer:
+### :heavy_check_mark: Answer
 
 
 
 
 
-**Question 3: Is there any pattern in the types (product categories) of products ordered from visitors in each city and country?**
+## Question 3 
+> Is there any pattern in the types (product categories) of products ordered from visitors in each city and country?
 
 
 SQL Queries:
@@ -72,7 +74,7 @@ WHERE v2_productcategory LIKE '%Home%'
 
 
 
-Answer:
+### :heavy_check_mark: Answer
 
 
 
@@ -100,7 +102,7 @@ ORDER BY total_orders DESC
 
 
 
-Answer:
+### :heavy_check_mark: Answer
 
 ```sql
 SELECT 
@@ -130,7 +132,7 @@ SQL Queries:
 
 
 
-Answer:
+### :heavy_check_mark: Answer
 
 
 
