@@ -18,7 +18,7 @@ WHERE sbs.total_ordered <> 0
 	AND (date BETWEEN '2016-11-01' AND '2016-12-31')
 	AND time_on_site IS NOT NULL
 GROUP BY v2_productname
-ORDER BY total_orders DESC
+ORDER BY page_views DESC
 LIMIT 10;
 ```
 
