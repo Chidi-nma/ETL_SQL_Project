@@ -6,14 +6,14 @@ As well as analyse and clean the data in order to derive insights that'll allow 
 
 ## Process
 > Below is the process I took 
-### Downloaded the data. 
-### Set up the e-commerce database in pgAdmin
-### Created the table headers in the database
-### Extracted the data from the CSV files. 
-### Created Primary and foreign keys 
-### Explored the tables to understand the data
-### Cleaned the data 
-### Analysed the data to derive insights
+1. Downloaded the data. 
+2. Set up the e-commerce database in pgAdmin
+3. Created the table headers in the database
+4. Extracted the data from the CSV files. 
+5. Created Primary and foreign keys 
+6. Explored the tables to understand the data
+7. Cleaned the data 
+8. Analysed the data to derive insights
 
 
 ## Results
